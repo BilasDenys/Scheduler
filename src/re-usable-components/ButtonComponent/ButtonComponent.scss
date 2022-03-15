@@ -1,0 +1,46 @@
+@import './src/_variables.scss';
+
+button {
+
+  border: none;
+  //border-radius: $border_radius;
+  //box-shadow: $shadow-1;
+  font-size: 18px;
+  //line-height: center;
+  //padding: 1rem;
+  background-color: $color_white;
+
+
+  color: $color_black;
+
+  &:hover {
+    cursor: pointer;
+    //color: $teal-lighten-5;
+    //opacity: .75;
+    background-color:$color_black;
+    color: $color_white;
+  }
+
+}
+
+.small {
+
+  padding: .5rem .5rem;
+  font-size: 16px;
+
+}
+
+.medium {
+
+  padding: .75rem;
+  font-size: 18px;
+  margin-left: .5rem;
+
+}
+
+.large {
+
+  padding: .5rem 1.25rem;
+  font-size: 20px;
+
+}

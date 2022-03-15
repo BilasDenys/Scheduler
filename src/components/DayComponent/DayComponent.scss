@@ -1,0 +1,53 @@
+@import "src/variables";
+
+.day {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+  width: 50px;
+  height: 50px;
+  //text-align: center;
+  transition: all 0.1s ease;
+  font-size: 20px;
+  //background-color: coral;
+  //margin: .25rem;
+  color: $color_black;
+  opacity: .75;
+
+  &:hover {
+    font-size: 1.5rem;
+  }
+
+}
+
+.paddingDays {
+
+  border: none;
+  pointer-events: none;
+  box-shadow: none;
+
+}
+
+.currentDay {
+  //box-shadow: $shadow-3;
+  //background-color:  $color_silver;
+  color: $color_red;
+  font-weight: 600;
+  opacity: 1;
+
+  &:hover {
+  // color: coral;
+}
+}
+
+.active {
+
+  //background-color: $teal-lighten-2;
+  //color: white;
+  font-weight: 600;
+  //position: relative;
+  color: $color_black;
+  opacity: 1;
+
+}
