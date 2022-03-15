@@ -1,0 +1,39 @@
+.home {
+
+
+  &__header {
+
+  }
+
+
+  &__body{
+    height: 96vh;
+
+    display: flex;
+
+    flex: 1 0 auto;
+
+  }
+
+  &__footer {
+    flex-shrink: 0;
+  }
+
+  &__calendar {
+
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+  }
+
+  &__events {
+
+    flex: 1;
+
+  }
+
+
+
+}
