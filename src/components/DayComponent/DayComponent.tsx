@@ -1,9 +1,9 @@
-import React from 'react';
+import React, { memo} from 'react';
 import { IProps } from './IProps';
 import './DayComponent.scss';
 import { NormalizeTitle } from "../../utils/NormalizeTitle";
 
-const DayComponent: React.FC<IProps> = ({ active, current, value, setClickedDay, clickedDay }) => {
+const DayComponentInner: React.FC<IProps> = ({ active, current, value, setClickedDay, clickedDay }): JSX.Element => {
 
     const setActiveDay = (): void => {
         setClickedDay(value)
@@ -20,4 +20,4 @@ const DayComponent: React.FC<IProps> = ({ active, current, value, setClickedDay,
 };
 
 
-export { DayComponent };
+export const DayComponent = memo( DayComponentInner );

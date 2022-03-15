@@ -6,7 +6,7 @@ interface IProps extends  React.ButtonHTMLAttributes<HTMLButtonElement> {
     buttonSize: string | undefined
 }
 
- const ButtonComponentInner: React.FC<IProps> = ({ type, value, onClick, buttonSize} ) => {
+ const ButtonComponentInner: React.FC<IProps> = ({ type, value, onClick, buttonSize} ): JSX.Element => {
         return (
             <button className={ buttonSize ? `${ buttonSize }` : undefined }
                     onClick={onClick}

@@ -78,7 +78,7 @@ export const useCalendar = () => {
             }
         }
 
-        setCalendar(calendar);
+        setCalendar( calendar );
 
     }, [ nav ])
 

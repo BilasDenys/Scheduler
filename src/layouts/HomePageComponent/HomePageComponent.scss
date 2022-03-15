@@ -27,9 +27,24 @@
   }
 
   &__events {
-
+    width: 350px;
     flex: 1;
 
+  }
+
+}
+
+.events {
+
+  display: flex;
+  flex-direction: column;
+  //justify-content: center;
+  align-items: start;
+
+  &__title {
+    font-size: 32px;
+    font-weight: 500;
+    margin: 2rem 0;
   }
 
 }

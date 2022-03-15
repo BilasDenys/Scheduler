@@ -1,0 +1,48 @@
+@import "src/variables";
+
+.event {
+  //box-shadow: $shadow_1;
+  padding: .5rem 0;
+  margin-bottom: 1rem;
+  border-bottom: 1px solid $color_black;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  //align-items: s;
+
+  &__header {
+
+    margin: .25rem 0;
+
+  }
+
+  &__body {
+
+  }
+
+  &__footer {
+
+  }
+
+  &__header, &__body , &__footer {
+
+    margin: .25rem 0;
+
+
+  }
+
+  &__time, &__date, &__author, &__phone {
+    padding: .25rem;
+    background-color: $color_silver;
+  }
+
+  &__header, &__footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+
+
+}

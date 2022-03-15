@@ -6,16 +6,17 @@ import { CapitalLater } from "../../utils/CapitalLetters";
 import {DayComponent} from "../DayComponent/DayComponent";
 import {ButtonComponent} from "../../re-usable-components";
 
-const CalendarComponent: React.FC<IProps> = () => {
+const CalendarComponent: React.FC<IProps> = ({ parentClickedDay }): JSX.Element => {
 
     const { weekDays, calendar, currentMonth, currentYear, setNav, nav} = useCalendar();
-    const [clickedDay, setClickedDay] = React.useState<number>(0)
+    const [clickedDay, setClickedDay] = React.useState<number>(0);
 
+    React.useEffect(() => {
+        parentClickedDay(clickedDay);
+    }, [clickedDay]);
 
     const changeMonth = React.useCallback(  ( step: number ) => {
-
         setNav(prevState => prevState + step );
-
     }, [nav])
 
     return (
