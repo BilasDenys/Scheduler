@@ -10,13 +10,14 @@ export interface IDay {
 }
 
 export interface IEvent {
-    start: string,
+
+    start: string
     end: string,
-    duration: string,
-    date: string
-    user: {
-        username: string,
-        email:string,
-        phone: string
-    }
+    duration: number,
+    description: string,
+    date: string,
+    author: string,
+    phone: string,
+    training: string
+
 }

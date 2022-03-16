@@ -52,7 +52,7 @@ import {IDay} from "../../types/IDay";
              </header>
               <main className="events__body">
                   { events.map((event, index) => {
-                      return (<EventComponent key={index + Math.random() + Math.random() * 10}/> )
+                      return (<EventComponent key={ index + Math.random() + Math.random() * 10 } event={ event } /> )
                   })}
               </main>
           </section>
@@ -64,7 +64,7 @@ import {IDay} from "../../types/IDay";
                     <ModalWindowComponent  setShowModal={showModalHandler}>
                         <CreateEventComponent
                             setShowModal={showModalHandler}
-                            setEvents={setEvents}
+                            setEvent={setEvents}
                             selectedDay={clickedDay}
                         />
                     </ModalWindowComponent>

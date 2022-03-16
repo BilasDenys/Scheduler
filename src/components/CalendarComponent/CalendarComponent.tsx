@@ -13,12 +13,14 @@ const CalendarComponent: React.FC<IProps> = ({ parentClickedDay }): JSX.Element 
     const [clickedDay, setClickedDay] = React.useState<IDay | null>(null);
 
     React.useEffect(() => {
+        console.log(nav)
         parentClickedDay(clickedDay);
     }, [clickedDay]);
 
-    const changeMonth = React.useCallback(  ( step: number ) => {
+    const changeMonth = ( step: number ) => {
+
         setNav(prevState => prevState + step );
-    }, [nav]);
+    }
 
     return (
         <section className='calendar'>
@@ -39,12 +41,12 @@ const CalendarComponent: React.FC<IProps> = ({ parentClickedDay }): JSX.Element 
                         <ButtonComponent
                             buttonSize='medium'
                             value='<'
-                            onClick={ changeMonth.bind(this, -1) }
+                            setShowModal={ changeMonth.bind(this, -1) }
                         />
                         <ButtonComponent
                             buttonSize='medium'
                             value='>'
-                            onClick={ changeMonth.bind(this, 1) }
+                            setShowModal={ changeMonth.bind(this, 1) }
                         />
 
                     </section>
@@ -70,7 +72,6 @@ const CalendarComponent: React.FC<IProps> = ({ parentClickedDay }): JSX.Element 
                         ))}
                     </section>
             </main>
-
         </section>
     );
 };

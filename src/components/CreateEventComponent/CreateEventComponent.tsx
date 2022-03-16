@@ -6,7 +6,7 @@ import {useCalendar} from "../../hooks";
 import {NormalizeTitle} from "../../utils/NormalizeTitle";
 import {useCalculateFinishEvent} from "../../hooks/useCalculateFinishEvent";
 
-const CreateEventComponentInner: React.FC<IProps> = ({ setShowModal, setEvents, selectedDay }) => {
+const CreateEventComponentInner: React.FC<IProps> = ({ setShowModal, setEvent, selectedDay }) => {
     const { currentHour, currentMinutes } = useCalendar();
     const [ startHour, setStartHour ] = React.useState<number>( currentHour );
     const [ startMinutes, setStartMinutes ] = React.useState<number>( currentMinutes );
@@ -25,13 +25,17 @@ const CreateEventComponentInner: React.FC<IProps> = ({ setShowModal, setEvents, 
     const addEvent = () => {
 
         const newItem = {
-            start: ` ${ NormalizeTitle(startHour) }:${ NormalizeTitle(startMinutes) }`,
+            start: `${ NormalizeTitle(startHour) }:${ NormalizeTitle(startMinutes)}`,
             end: finishEvent,
             duration,
-            description
+            description,
+            date: selectedDay?.date,
+            author: 'Bil Den',
+            phone: '+380203040509',
+            training: typeTraining
         }
 
-        setEvents((prevState: any) => [...prevState, newItem])
+        setEvent((prevState: any) => [...prevState, newItem])
 
         setShowModal(false)
     }
