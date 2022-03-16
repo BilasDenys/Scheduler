@@ -17,6 +17,9 @@ const EventComponent: React.FC<IProps> = (): JSX.Element => {
             </header>
 
             <main className="event__body">
+                <section className="event__type">
+                    Training
+                </section>
                 <section className="event__description">
                     Lorem ipsum dolor sit amet, consectetur adipisicing elit. Labore, tenetur!
                 </section>

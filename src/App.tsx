@@ -9,6 +9,7 @@ const  App = (): JSX.Element => {
       <main className="app__body">
           <HomePageComponent />
       </main>
+
     </section>
   );
 }

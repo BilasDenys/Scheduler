@@ -5,11 +5,12 @@ import './CalendarComponent.scss';
 import { CapitalLater } from "../../utils/CapitalLetters";
 import {DayComponent} from "../DayComponent/DayComponent";
 import {ButtonComponent} from "../../re-usable-components";
+import {IDay} from "../../types/IDay";
 
 const CalendarComponent: React.FC<IProps> = ({ parentClickedDay }): JSX.Element => {
 
     const { weekDays, calendar, currentMonth, currentYear, setNav, nav} = useCalendar();
-    const [clickedDay, setClickedDay] = React.useState<number>(0);
+    const [clickedDay, setClickedDay] = React.useState<IDay | null>(null);
 
     React.useEffect(() => {
         parentClickedDay(clickedDay);
@@ -17,7 +18,7 @@ const CalendarComponent: React.FC<IProps> = ({ parentClickedDay }): JSX.Element 
 
     const changeMonth = React.useCallback(  ( step: number ) => {
         setNav(prevState => prevState + step );
-    }, [nav])
+    }, [nav]);
 
     return (
         <section className='calendar'>
@@ -48,7 +49,6 @@ const CalendarComponent: React.FC<IProps> = ({ parentClickedDay }): JSX.Element 
 
                     </section>
                 </header>
-
                 <section className="calendar__week-days flex">
                         { weekDays.map(weekDay => {
                             return (
@@ -57,8 +57,6 @@ const CalendarComponent: React.FC<IProps> = ({ parentClickedDay }): JSX.Element 
                             })
                         }
                 </section>
-
-
             </header>
 
             <main className="calendar__body body">

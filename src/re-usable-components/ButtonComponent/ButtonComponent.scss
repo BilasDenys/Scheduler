@@ -3,20 +3,15 @@
 button {
 
   border: none;
-  //border-radius: $border_radius;
-  //box-shadow: $shadow-1;
+
   font-size: 18px;
-  //line-height: center;
-  //padding: 1rem;
-  background-color: $color_white;
+  background-color: #fafafa;
 
 
   color: $color_black;
 
   &:hover {
     cursor: pointer;
-    //color: $teal-lighten-5;
-    //opacity: .75;
     background-color:$color_black;
     color: $color_white;
   }
@@ -32,7 +27,7 @@ button {
 
 .medium {
 
-  padding: .75rem;
+  padding: .5rem .75rem;
   font-size: 18px;
   margin-left: .5rem;
 

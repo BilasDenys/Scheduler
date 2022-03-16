@@ -17,6 +17,9 @@ export const useCalendar = () => {
     const [ currentMonth, setCurrentMonth] = React.useState<string>('');
     const [ currentYear, setCurrentYear] = React.useState<string>('');
 
+    const date = new Date();
+    const currentHour = date.getHours();
+    const currentMinutes = date.getMinutes();
 
     const separateDisplayDate = ( date: string) => {
         setCurrentMonth( date.split(' ')[0] );
@@ -63,7 +66,7 @@ export const useCalendar = () => {
                     current: index - paddingDays === day && nav === 0,
                     padding: false,
                     active: false,
-                    date: new Date(year, month, index).toLocaleDateString('ru-RU'),
+                    date: new Date(year, month, index - 1).toLocaleDateString('ru-RU'),
                     events: [],
                 });
             } else {
@@ -82,14 +85,15 @@ export const useCalendar = () => {
 
     }, [ nav ])
 
-
     return {
         weekDays,
         setNav,
         calendar,
         currentMonth,
         currentYear,
-        nav
+        nav,
+        currentHour,
+        currentMinutes
     }
 
 }

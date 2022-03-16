@@ -1,7 +1,8 @@
 import {Dispatch, SetStateAction} from "react";
+import {IDay} from "../../types/IDay";
 
 export interface IProps {
 
-    parentClickedDay: Dispatch<SetStateAction<number>>
+    parentClickedDay: Dispatch<SetStateAction<IDay | null>>
 
 }
